@@ -31,7 +31,16 @@ gulp.task('styles', () => {
     }).on('error', $.sass.logError) )
     .pipe(gulp.dest('.tmp/css'))
     .pipe(reload({stream: true}));
-  // return gulp.src('app/styles/main.scss')
-  //   .pipe($.sass().on('error', sass.logError))
-  //   .pipe(gulp.dest('.tmp/css'));
+});
+
+
+gulp.task('sassdoc', function () {
+  var options = {
+    dest: 'docs',
+    verbose: true,
+    theme: 'neat'
+  };
+
+  return gulp.src('src/sass/**/*.scss')
+    .pipe($.sassdoc(options));
 });
