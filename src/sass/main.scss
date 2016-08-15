@@ -2,7 +2,43 @@
 /// @type color
 $main-color: #ff0033;
 
+/// foo...
+/// @alias main-color
+$other-color: $main-color;
 
 html {
   color: $main-color;
+}
+
+
+/// Shorthand for positioning.
+/// @access private
+/// @param {Length} $top [string] - Top offset
+/// @param {Length} $right [null] - Right offset
+/// @param {Length} $bottom [null] - Bottom offset
+/// @param {Length} $left [null] - Left offset
+/// @output this does summat pretty epic
+@mixin position($top: string, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+/// Accessibility ellipsis helper.
+/// @group helpers
+/// @param {Bool} $extend [true] - Whether or not extend a placeholder.
+/// @example scss
+///   @include clamp(42, $min: 13, $max: 37) // returns 37
+@mixin ellipsis($extend: true) {
+  @if $extend {
+    @extend %ellipsis;
+  }
+
+  @else {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }

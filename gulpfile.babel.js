@@ -38,7 +38,10 @@ gulp.task('sassdoc', function () {
   var options = {
     dest: 'docs',
     verbose: true,
-    theme: 'neat'
+    theme: 'pheek',
+    display: {
+      alias: true
+    }
   };
 
   return gulp.src('src/sass/**/*.scss')
