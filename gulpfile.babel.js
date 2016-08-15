@@ -44,6 +44,19 @@ gulp.task('sassdoc', function () {
     }
   };
 
+
+
   return gulp.src('src/sass/**/*.scss')
     .pipe($.sassdoc(options));
+
 });
+
+gulp.task('build', (cb)=> {
+  $.runSequence( 'sassdoc', 'images', cb)
+});
+
+gulp.task('images', ()=> {
+  return gulp.src('./src/images/*.*')
+    .pipe( $.print() )
+    .pipe( gulp.dest('./docs/assets/images'));
+})

@@ -1,5 +1,7 @@
 {
   "name": "sassdoc-example",
+  "title": "foo bar",
+  "logo": "file-name",
   "version": "1.0.0",
   "description": "A simple sample SASS library on which to example various SASSDoc themes",
   "main": "index.js",
@@ -32,6 +34,7 @@
     "gulp-sourcemaps": "^1.5.0",
     "i": "^0.3.5",
     "npm": "^3.10.6",
+    "run-sequence": "^1.2.2",
     "sassdoc-theme-neat": "0.0.2",
     "sassdoc-theme-pheek": "^0.4.4",
     "vinyl-properties": "^2.0.0",
