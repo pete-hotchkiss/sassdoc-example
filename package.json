@@ -1,7 +1,7 @@
 {
   "name": "sassdoc-example",
   "title": "foo bar",
-  "logo": "file-name",
+  "logo": "clarksons-logo.svg",
   "version": "1.0.0",
   "description": "A simple sample SASS library on which to example various SASSDoc themes",
   "main": "index.js",

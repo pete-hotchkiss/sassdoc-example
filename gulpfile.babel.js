@@ -44,8 +44,6 @@ gulp.task('sassdoc', function () {
     }
   };
 
-
-
   return gulp.src('src/sass/**/*.scss')
     .pipe($.sassdoc(options));
 
@@ -60,3 +58,18 @@ gulp.task('images', ()=> {
     .pipe( $.print() )
     .pipe( gulp.dest('./docs/assets/images'));
 })
+
+/** server to run the SASS docs in **/
+gulp.task('serve', () => {
+  browserSync.init({
+    notify: false,
+    port: 9005,
+    server: {
+      baseDir: ['docs/']
+    },
+    reloadDelay: 500
+  });
+
+  gulp.watch(['src/sass/**/*']).on('change', reload);
+
+});
