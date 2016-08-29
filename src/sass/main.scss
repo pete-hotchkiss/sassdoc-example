@@ -1,10 +1,12 @@
 /// The color everything will use
-/// @group COlours
+/// @group Colours
 /// @type color
+/// @see {mixin} ellipsis
 $main-color: #ff0033;
 
 /// foo...
 /// @alias main-color
+/// @group Merkle
 $other-color: $main-color;
 
 html {
@@ -19,6 +21,8 @@ html {
 /// @param {Length} $bottom [null] - Bottom offset
 /// @param {Length} $left [null] - Left offset
 /// @output this does summat pretty epic
+/// @todo better way to do poisitioning
+/// @todo make default values to 0
 @mixin position($top: string, $right: null, $bottom: null, $left: null) {
   position: $position;
   top: $top;
@@ -32,6 +36,7 @@ html {
 /// @param {Bool} $extend [true] - Whether or not extend a placeholder.
 /// @example scss
 ///   @include clamp(42, $min: 13, $max: 37) // returns 37
+/// @see {variable} main-color
 @mixin ellipsis($extend: true) {
   @if $extend {
     @extend %ellipsis;
@@ -43,3 +48,18 @@ html {
     white-space: nowrap;
   }
 }
+
+/// For debugging n stuff
+/// Accessibility ellipsis helper.
+/// @group helpers
+/// @description foo bar fee fum
+.debug {
+  border: 1px solid gold;
+  background: url('some/var/file.png');
+}
+
+/// Someting wonderderfull has happened
+/// @type Map
+/// @prop {string} index [foo] - used for navigation and other links
+/// @prop {map} nested [map] - used for backgrounds
+$foo: ( 'index': 'to the start of time', 'nested': ( "person": 'apple' ));
